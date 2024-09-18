@@ -1,55 +1,102 @@
-import type { MetaFunction, LoaderFunction } from '@remix-run/node';
-
-export const loader: LoaderFunction = () => {
-    return {
-        PORT: process.env.PORT,
-        BACKEND_API_URL: process.env.BACKEND_API_URL
-    };
-};
+import { MetaFunction } from '@remix-run/node';
+import { LinksFunction } from '@remix-run/node';
+import styles from './styles/styles.css';
 
 export const meta: MetaFunction = () => {
-    return [
-        { title: 'New Remix App' },
-        { name: 'description', content: 'Welcome to Remix!' }
-    ];
+  return [
+    { title: 'Blog' },
+    { name: 'description', content: 'A sample blog page using Remix and Bootstrap' },
+  ];
+};
+
+export const links: LinksFunction = () => {
+  return [{ rel: 'stylesheet', href: styles }];
 };
 
 export default function Index() {
-    return (
-        <div className="font-sans p-4">
-            <h1 className="text-3xl">Welcome to Remix</h1>
-            <ul className="list-disc mt-4 pl-6 space-y-2">
-                <li>
-                    <a
-                        className="text-blue-700 underline visited:text-purple-900"
-                        target="_blank"
-                        href="https://remix.run/start/quickstart"
-                        rel="noreferrer"
-                    >
-                        5m Quick Start
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className="text-blue-700 underline visited:text-purple-900"
-                        target="_blank"
-                        href="https://remix.run/start/tutorial"
-                        rel="noreferrer"
-                    >
-                        30m Tutorial
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className="text-blue-700 underline visited:text-purple-900"
-                        target="_blank"
-                        href="https://remix.run/docs"
-                        rel="noreferrer"
-                    >
-                        Remix Docs
-                    </a>
-                </li>
+  return (
+    <div>
+      {/* Header 區域 */}
+      <header className="header">
+        <div className="container text-center">
+          <h1 className="blog-title">BLOG</h1>
+          <nav className="navbar justify-content-center">
+            <ul className="nav">
+              <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Posts</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Categories</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">About</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
             </ul>
+          </nav>
         </div>
-    );
+      </header>
+
+      {/* 主內容區 */}
+      <section className="main-content">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <div className="post">
+                <img src="https://via.placeholder.com/600x400" className="img-fluid" alt="Post Image" />
+                <div className="post-overlay">
+                  <p>I think it is interesting</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="post">
+                <img src="https://via.placeholder.com/600x400" className="img-fluid" alt="Post Image" />
+                <div className="post-overlay">
+                  <p>I think it is interesting</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="post">
+                <img src="https://via.placeholder.com/600x400" className="img-fluid" alt="Post Image" />
+                <div className="post-overlay">
+                  <p>I think it is interesting</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mt-4">
+            <div className="col-md-12 text-center">
+              <h2>Welcome to this Lifestyle blog</h2>
+              <p>This is a brief introduction about the blog and its content.</p>
+            </div>
+          </div>
+
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div className="post-summary">
+                <img src="https://via.placeholder.com/300x200" className="img-fluid" alt="Post Summary Image" />
+                <div className="summary-overlay">
+                  <p>Lifestyle Posts</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="post-summary">
+                <img src="https://via.placeholder.com/300x200" className="img-fluid" alt="Post Summary Image" />
+                <div className="summary-overlay">
+                  <p>Another Topic</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="post-summary">
+                <img src="https://via.placeholder.com/300x200" className="img-fluid" alt="Post Summary Image" />
+                <div className="summary-overlay">
+                  <p>More Content</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }

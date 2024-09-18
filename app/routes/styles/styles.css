@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: #333;
+    font-size: 1rem;
+    margin: 0 15px;
+}
+
+.nav-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.main-content {
+    margin-top: 20px;
+}
+
+.post {
+    position: relative;
+    overflow: hidden;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.post:hover img {
+    transform: scale(1.1);
+}
+
+.post-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.post:hover .post-overlay {
+    opacity: 1;
+}
+
+.post-summary {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.post-summary img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.post-summary:hover img {
+    transform: scale(1.05);
+}
+
+.summary-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.post-summary:hover .summary-overlay {
+    opacity: 1;
+}
